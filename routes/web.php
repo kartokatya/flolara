@@ -11,17 +11,24 @@
 |
 */
 
-/*Route::get('/', function () {
-    return view('welcome');
-});*/
-Route::get('/','HomeController@welcome')->name('welcome');
+use App\Category;
+use App\Product;
+
+Route::get('/', function () {
+    $category=Category::all();
+    $products=Product::get()->where('main','==',1);
+    return view('welcome',[
+        'category'=>$category ,
+        'products'=>$products,]);
+});
+//Route::get('/','HomeController@welcome')->name('welcome');
 Auth::routes();
 
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/{slug}', 'catalog\CatalogController@index')->name('catalog.index');
-Route::get('/catalog/{slug}', 'catalog\CatalogController@good')->name('catalog.good');
+Route::get('/catalog/{slug}', 'catalog\CatalogController@index')->name('catalog.index');
+Route::get('/category/{slug}', 'catalog\CatalogController@good')->name('catalog.good');
 
 //Admin
 Route::group(['middleware'=>'admin','prefix'=>'admin'], function(){
@@ -48,4 +55,9 @@ Route::group(['middleware'=>'admin','prefix'=>'admin'], function(){
         ->where('id','\d+')
         ->name('product.edit');
     Route::delete('/product/{id}','admin\ProductController@delete');
+});
+
+Route::group(['middleware'=>'user'], function(){
+    Route::get('/cart','cart\CartController@index')->name('cart.index');
+    Route::post('/cart','cart\CartController@indexRequest');
 });

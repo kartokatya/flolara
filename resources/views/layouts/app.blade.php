@@ -20,9 +20,8 @@
     <script type="text/javascript" src="{{ asset('js/jquery-1.6.1.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/jquery.nivo.slider.pack.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/jquery.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/ddsmoothmenu.js') }}">
-
-    </script>
+    <script type="text/javascript" src="{{ asset('js/ddsmoothmenu.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/main.js') }}"></script>
 
     <script type="text/javascript">
 
@@ -52,6 +51,7 @@
 
 <div id="templatemo_wrapper_h">
     <div id="templatemo_header_wh">
+
         <div id="templatemo_header" class="header_home">
             <div id="site_title"><a href="#">Floral Shop</a></div>
             <div id="templatemo_menu" class="ddsmoothmenu">
@@ -65,11 +65,13 @@
                             <li><a href="#subpage3">Sub Page Three</a></li>
                             <li><a href="#subpage4">Sub Page Four</a></li>
                             <li><a href="#subpage5">Sub Page Five</a></li>
+
                         </ul>
                     </li>
                     <li><a href="checkout.html">Checkout</a></li>
                     <li><a href="contact.html">Contact</a></li>
                     <li><a href="faqs.html">FAQs</a></li>
+                    <li><a href="/cart">Корзина</a></li>
                 </ul>
                 <div id="templatemo_search">
                     <form action="#" method="get">
@@ -81,21 +83,7 @@
                 <br style="clear: left" />
             </div> <!-- end of templatemo_menu -->
 
-            <div class="slider-wrapper theme-orman">
-                <div class="ribbon"></div>
-                <div id="slider" class="nivoSlider">
-                    <img src="{{ asset('images/portfolio/01.jpg') }}" alt="slider image 1" />
-                    <a href="#">
-                        <img src="{{ asset('images/portfolio/02.jpg') }}" alt="slider image 2" title="This is an example of a caption" />
-                    </a>
-                    <img src="{{ asset('images/portfolio/03.jpg') }}" alt="slider image 3" />
-                    <img src="{{ asset('images/portfolio/04.jpg') }}" alt="slider image 4" title="#htmlcaption" />
-                    <img src="{{ asset('images/portfolio/05.jpg') }}" alt="slider image 5" title="#htmlcaption" />
-                </div>
-                <div id="htmlcaption" class="nivo-html-caption">
-                    <strong>Example</strong> caption with <a href="http://dev7studios.com" rel="nofollow">a credit link</a> for <em>this slider</em>.
-                </div>
-            </div>
+
 
             <script type="text/javascript">
                 $(window).load(function() {

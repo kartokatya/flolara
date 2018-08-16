@@ -40,17 +40,16 @@
                 <div class="product_box">
                     <a href="{{Route('catalog.good',['slug'=>$product->slug])}}"><img src="images/product/04.jpg" alt="floral set 1" /></a>
                     <h3>{{$product->name}}</h3>
+                    <input type="hidden" id="pro_id" value="{{$product->id}}">
                     <p class="product_price">{{$product->price}} руб.</p>
                     <p class="add_to_cart">
                         <a href="{{Route('catalog.good',['slug'=>$product->slug])}}">Detail</a>
-                        <a href="shoppingcart.html">Add to Cart</a>
+                        <button class="btn btn-default add_to_cart" id="addCart">Добавить в корзину</button>
                     </p>
                 </div>
             @endforeach
 
-            <div class="blank_box">
-                <a href="#"><img src="images/free_shipping.jpg" alt="Free Shipping" /></a>
-            </div>
+
         </div>
         <div class="cleaner"></div>
     </div> <!-- END of main -->
