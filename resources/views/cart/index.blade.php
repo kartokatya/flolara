@@ -49,12 +49,12 @@
                         <td align="right">${{$val->product($val->product_id)->price}}</td>
 
                         <td align="right">${{$val->quantity*$val->product($val->product_id)->price}}</td>
-                        <td align="center"> <a href="#"><img src="images/remove.png" alt="remove" /><br />Remove</a> </td>
+                            <td align="center"> <a class="deleteCart"  data-id = "{{$val->id}}" data-token="{{ csrf_token() }}"  href=""><img src="images/remove.png" alt="remove" /> </a></td>
                     </tr>
                     @endforeach
                 </table>
                 <div class="cleaner h20"></div>
-                <div class="right"><a href="checkout.html" class="button">checkout</a></div>
+                <div class="right"><a href="/checkout" class="button">checkout</a></div>
                 <div class="cleaner h20"></div>
                 <div class="blank_box">
                     <a href="#"><img src="images/free_shipping.jpg" alt="Free Shipping" /></a>

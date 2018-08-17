@@ -1,5 +1,8 @@
 @extends('layouts.app')
 @section('content')
+    <?php
+    use App\Category;
+    ?>
 
         <div id="templatemo_main_wrapper">
             <div id="templatemo_main">
@@ -8,9 +11,9 @@
                         <h3>Categories</h3>
                         <div class="content">
                             <ul class="sidebar_list">
-                                @foreach($category as $item)
-                                    <li><a href="{{Route('catalog.index',['id'=>$item->slug])}}">{{$item->name}}</a></li>
-                                @endforeach
+                                <?php
+                                $cat = new Category();
+                                $cat->categoryTree($category,0);?>
                             </ul>
                         </div>
                     </div>
@@ -52,6 +55,13 @@
 
                     <h4>Описание товара</h4>
                     <p>{{$product->contentt}}<p>
+                    <h3>Комментарии</h3>
+                    <form>
+                        <textarea style="width:100%;">Оставить комментарий</textarea>
+                        <button type="submit" style="margin: 10px;">Отправить</button>
+                    </form>
+
+
                     <div class="cleaner h40"></div>
                     <div class="blank_box">
                         <a href="#"><img src="/images/free_shipping.jpg" alt="Free Shipping" /></a>

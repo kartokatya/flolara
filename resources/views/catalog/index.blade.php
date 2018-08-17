@@ -44,7 +44,7 @@ use Illuminate\Support\Facades\Auth;
                         <p class="add_to_cart">
 
                             <a href="{{Route('catalog.good',['slug'=>$product->slug])}}">Detail</a>
-                            <button data-token="{{ csrf_token() }}" data-id="{{$product->id}}" class="add btn btn-default add_to_cart">Добавить в корзину</button>
+                            <button data-token="{{ csrf_token() }}" data-id="{{$product->id}}"  class="add btn btn-default add_to_cart">Добавить в корзину</button>
 
                         </p>
                     </div>

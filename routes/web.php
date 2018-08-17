@@ -60,4 +60,7 @@ Route::group(['middleware'=>'admin','prefix'=>'admin'], function(){
 Route::group(['middleware'=>'user'], function(){
     Route::get('/cart','cart\CartController@index')->name('cart.index');
     Route::post('/cart','cart\CartController@indexRequest');
+    Route::get('/checkout','cart\CartController@checkout')->name('checkout');
+    Route::post('/checkout','cart\CartController@checkoutRequest');
+    Route::delete('/cart/{id}','cart\CartController@delete');
 });

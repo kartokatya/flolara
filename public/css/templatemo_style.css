@@ -231,9 +231,16 @@ a.button {
 	background: url(../images/templatemo_btn.png) no-repeat
 }
 
-.form_field input { 
+.form_field input {
 	background: #395015; 
 	border: 1px solid #5d7c29; 
+	width: 300px;
+	padding: 4px;
+	color: #FFFFFF;
+}
+.form_field select {
+	background: #395015;
+	border: 1px solid #5d7c29;
 	width: 300px;
 	padding: 4px;
 	color: #FFFFFF;
